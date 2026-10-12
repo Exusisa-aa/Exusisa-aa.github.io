@@ -1,0 +1,436 @@
+[
+  {
+    "id": "underwater-yolo",
+    "order": 1,
+    "title": "水下养殖数字化智能检测平台",
+    "subtitle": "YOLO 视觉 · 检测与计数",
+    "period": "【待填】例如 2025.03 – 2025.06",
+    "role": "【待填】你在团队里负责什么",
+    "team": "【待填】团队规模，或个人项目",
+    "status": "competition",
+    "category": [
+      "vision",
+      "ai-agent"
+    ],
+    "tags": [
+      "Python",
+      "Ultralytics",
+      "YOLO",
+      "OpenCV",
+      "ONNX"
+    ],
+    "summary": "基于水下机器鱼传感器和其拍摄图像的数字化检测平台，不仅记录数据，而且可以识别鱼病和网衣破损",
+    "description": "【待填】写 2–4 句。建议覆盖：\n- 为什么要做（养殖场景下的什么痛点）\n- 你具体做了什么（数据、模型、训练、部署）\n- 结果如何（但不要写没有依据的数字）\n",
+    "highlights": [
+      "【待填】",
+      "【待填】",
+      "【待填】"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "Python"
+      ],
+      "framework": [
+        "Ultralytics YOLO",
+        "OpenCV",
+        "ONNX Runtime"
+      ],
+      "middleware": [],
+      "infra": [
+        "Docker",
+        "Ubuntu"
+      ]
+    },
+    "cover": "/media/projects/underwater-yolo/cover.webp",
+    "images": [],
+    "gallery": [],
+    "frames": [],
+    "videos": [],
+    "links": [],
+    "galleryAspect": null,
+    "theme": {
+      "c1": "#4fe0c8",
+      "c2": "#7ce0a8",
+      "accent": "#54e0b8"
+    },
+    "featured": false
+  },
+  {
+    "id": "mycat-cluster",
+    "order": 2,
+    "title": "基于 Mycat 的数据库集群",
+    "subtitle": "水平分表 · 二主二从读写分离 · 主备自动切换",
+    "period": "【待填】",
+    "role": "【待填】独立搭建 / 团队协作",
+    "team": "",
+    "status": "personal",
+    "category": [
+      "database",
+      "devops"
+    ],
+    "tags": [
+      "MySQL",
+      "Mycat",
+      "Mycat-eye",
+      "水平分表",
+      "主从复制",
+      "读写分离",
+      "主备切换",
+      "Linux"
+    ],
+    "summary": "用 Mycat 按 id 取模把写入水平拆到两个主库，每个分片再配一台备用主库和各带一个从库，合计 8 个 MySQL 节点；主库故障时备用主库接管写入。",
+    "description": "整套集群分两层：Mycat 在前面做分片路由和读写分离，后面是两组 MySQL 主从。\n\n写入按 id % 2 水平分表落到 Master1 / Master2。每个分片是一主一备的结构：\nMaster1 配备用主库 Master11，两台再各带一个从库（Slave1 / Slave11）。\n两个分片合计 8 个 MySQL 节点，加 Mycat 一共 9 台机器。\n\nMaster1 与 Master2 只接受写入，其余 6 个节点（两台备用主库 + 四个从库）\n全部只承接读 —— 写集中在两台、读摊到六台。\n主库挂掉时，Master11 接替 Master1、Master22 接替 Master2 执行写操作。\n\nMycat 侧通过 schema.xml 声明四组 dataHost，balance=\"1\" 让读请求在\n各读库之间随机分发，switchType=\"1\" 打开主库故障自动切换。\n",
+    "highlights": [
+      "水平分表：写入按 id % 2 路由到 Master1 与 Master2，避免单主库数据量过大拖慢性能",
+      "每个分片「二主二从」：Master1 配 Master11、Master2 配 Master22，两台再各带一个从库",
+      "共 8 个 MySQL 节点 + 1 个 Mycat，分两个分片各 4 节点",
+      "读写分离：只有 Master1 / Master2 接受写入，其余 6 个节点（备用主库 + 从库）全部只读",
+      "故障接管：Master1 挂掉由 Master11 接替写、Master2 挂掉由 Master22 接替写",
+      "配置为 balance=\"1\" 读写分离模式，Mycat 在提供读的节点之间随机分发请求",
+      "用 Mycat-eye 监控 SQL 读写次数与响应时间分布"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "SQL"
+      ],
+      "framework": [
+        "Mycat",
+        "Mycat-eye"
+      ],
+      "middleware": [
+        "MySQL"
+      ],
+      "infra": [
+        "Linux"
+      ]
+    },
+    "cover": "/media/projects/mycat-cluster/01-architecture.webp",
+    "images": [],
+    "gallery": [
+      {
+        "src": "/media/projects/mycat-cluster/01-architecture.webp",
+        "alt": "手绘的 Mycat 数据库集群架构图",
+        "caption": "集群拓扑 · Mycat 分片路由 + 8 个 MySQL 节点（id % 2 分成两个分片，每片二主二从）",
+        "kind": "architecture"
+      },
+      {
+        "src": "/media/projects/mycat-cluster/02-schema-xml.webp",
+        "alt": "Mycat schema.xml 中 dataHost 的配置",
+        "caption": "schema.xml · 2 个 dataHost 各声明 2 个 writeHost，balance=1 读写分离、switchType=1 自动切换",
+        "kind": "diagram"
+      },
+      {
+        "src": "/media/projects/mycat-cluster/03-mycateye.webp",
+        "alt": "Mycat-eye 的 SQL 统计页面",
+        "caption": "Mycat-eye · SQL 读写次数与响应时间分布",
+        "kind": "screenshot"
+      }
+    ],
+    "frames": [],
+    "videos": [],
+    "links": [
+      {
+        "type": "other",
+        "label": "",
+        "url": "",
+        "note": "仅展示，虚拟机镜像由作者保管"
+      }
+    ],
+    "galleryAspect": 1.5,
+    "theme": {
+      "c1": "#4fc3e0",
+      "c2": "#7c8cff",
+      "accent": "#5fc8e8"
+    },
+    "featured": true
+  },
+  {
+    "id": "zhonghui-admin",
+    "order": 3,
+    "title": "后台管理系统",
+    "subtitle": "中惠云启科技集团",
+    "period": "【待填】",
+    "role": "【待填】",
+    "team": "",
+    "status": "internship",
+    "category": [
+      "java-backend",
+      "frontend"
+    ],
+    "tags": [
+      "SpringBoot",
+      "MyBatis-Plus",
+      "Vue3",
+      "ElementPlus",
+      "MySQL",
+      "Redis",
+      "JWT",
+      "Nginx"
+    ],
+    "summary": "中惠云启科技集团的后台管理系统，涵盖120+的表数和多个模块",
+    "description": "【待填】建议写：系统的业务模块有哪些、你负责哪些模块、\n权限/认证怎么做的、有没有做性能上的优化。\n",
+    "highlights": [
+      "【待填】"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "Java",
+        "SQL"
+      ],
+      "framework": [
+        "SpringBoot",
+        "MyBatis-Plus",
+        "Vue3",
+        "ElementPlus"
+      ],
+      "middleware": [
+        "Redis"
+      ],
+      "infra": [
+        "MySQL",
+        "Nginx"
+      ]
+    },
+    "cover": "/media/projects/zhonghui-admin/cover.webp",
+    "images": [],
+    "gallery": [],
+    "frames": [],
+    "videos": [],
+    "links": [],
+    "galleryAspect": null,
+    "theme": null,
+    "featured": false
+  },
+  {
+    "id": "zhonghui-datav",
+    "order": 4,
+    "title": "数据可视化系统",
+    "subtitle": "中惠云启科技集团",
+    "period": "【待填】",
+    "role": "【待填】",
+    "team": "",
+    "status": "internship",
+    "category": [
+      "frontend",
+      "java-backend"
+    ],
+    "tags": [
+      "Vue3",
+      "ECharts",
+      "SpringBoot",
+      "MySQL",
+      "data-v"
+    ],
+    "summary": "中惠云启科技集团的数据可视化系统，用于大屏展示",
+    "description": "【待填】建议写：可视化的指标有哪些、数据怎么聚合的、\n大屏适配和实时刷新怎么做的。\n",
+    "highlights": [
+      "【待填】"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "Java",
+        "JavaScript"
+      ],
+      "framework": [
+        "Vue3",
+        "ECharts",
+        "SpringBoot"
+      ],
+      "middleware": [],
+      "infra": [
+        "MySQL"
+      ]
+    },
+    "cover": "/media/projects/zhonghui-datav/cover.webp",
+    "images": [],
+    "gallery": [],
+    "frames": [],
+    "videos": [],
+    "links": [],
+    "galleryAspect": null,
+    "theme": null,
+    "featured": false
+  },
+  {
+    "id": "zhonghui-bidding",
+    "order": 5,
+    "title": "招投标网",
+    "subtitle": "中惠云启科技集团",
+    "period": "【待填】",
+    "role": "【待填】",
+    "team": "",
+    "status": "internship",
+    "category": [
+      "java-backend",
+      "frontend"
+    ],
+    "tags": [
+      "SpringBoot",
+      "MyBatis-Plus",
+      "Vue3",
+      "MySQL"
+    ],
+    "summary": "中惠云启科技集团的招投标网，文章展示模块",
+    "description": "【待填】建议写：招标/投标的业务流程、搜索怎么做的、\n有没有用到 Elasticsearch、并发或数据量上的考量。\n",
+    "highlights": [
+      "【待填】"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "Java",
+        "SQL"
+      ],
+      "framework": [
+        "SpringBoot",
+        "MyBatis-Plus",
+        "Vue3"
+      ],
+      "middleware": [
+        "Elasticsearch"
+      ],
+      "infra": [
+        "MySQL",
+        "Nginx"
+      ]
+    },
+    "cover": "/media/projects/zhonghui-bidding/cover.webp",
+    "images": [],
+    "gallery": [],
+    "frames": [],
+    "videos": [],
+    "links": [],
+    "galleryAspect": null,
+    "theme": null,
+    "featured": false
+  },
+  {
+    "id": "microservice-mall",
+    "order": 6,
+    "title": "微服务商城平台",
+    "subtitle": "SpringCloud 微服务 · Docker 编排部署",
+    "period": "【待填】",
+    "role": "【待填】你在其中负责什么",
+    "team": "",
+    "status": "personal",
+    "category": [
+      "microservice",
+      "devops",
+      "java-backend"
+    ],
+    "tags": [
+      "Docker",
+      "Nacos",
+      "Sentinel",
+      "Seata",
+      "RabbitMQ",
+      "Elasticsearch",
+      "Redis",
+      "MySQL",
+      "Nginx",
+      "网关",
+      "服务模块架构"
+    ],
+    "summary": "用 Docker 编排整套 SpringCloud 微服务商城：Nacos 注册与配置中心、Sentinel 流控熔断、Seata 分布式事务、RabbitMQ 消息与延迟队列、Redis 分片集群、Elasticsearch 商品检索。",
+    "description": "【待填】建议补：\n- 商城有哪些业务模块（截图里能看到购物车、商品、用户服务）\n- 容器编排怎么组织的（compose 分了几个网络/数据卷、启动顺序）\n- 遇到的具体问题（比如某个组件先起后起导致注册失败之类）\n",
+    "highlights": [
+      "Redis 分片集群 9 节点 3 主 6 从，主从复制状态 online",
+      "Nacos 作为配置中心集中管理 10 条共享配置（数据源 / Redis / 日志 / 网关路由等）",
+      "Sentinel 接入商品服务的簇点链路，配置流控、熔断、热点规则",
+      "RabbitMQ 声明延迟队列与死信交换机，承载支付、交易等异步流程"
+    ],
+    "metrics": [],
+    "stack": {
+      "language": [
+        "Java",
+        "Shell",
+        "YAML"
+      ],
+      "framework": [
+        "SpringCloud",
+        "Docker Compose"
+      ],
+      "middleware": [
+        "Nacos",
+        "Sentinel",
+        "Seata",
+        "RabbitMQ",
+        "Elasticsearch",
+        "Kibana",
+        "Redis",
+        "MySQL"
+      ],
+      "infra": [
+        "Docker",
+        "Nginx"
+      ]
+    },
+    "cover": "/media/projects/microservice-mall/01-docker-ps.webp",
+    "images": [],
+    "gallery": [
+      {
+        "src": "/media/projects/microservice-mall/01-docker-ps.webp",
+        "alt": "docker ps 查看全部容器运行状态",
+        "caption": "全部容器运行中 · Redis 分片 / Nacos / Seata / Sentinel / RabbitMQ / ES / Kibana / MySQL",
+        "kind": "screenshot"
+      },
+      {
+        "src": "/media/projects/microservice-mall/02-redis-cluster.webp",
+        "alt": "Redis 集群节点列表与主从复制状态",
+        "caption": "Redis 分片集群 · cluster nodes 与主从复制状态",
+        "kind": "diagram"
+      },
+      {
+        "src": "/media/projects/microservice-mall/03-nacos-config.webp",
+        "alt": "Nacos 配置管理页面",
+        "caption": "Nacos 配置中心 · 集中管理共享配置与网关路由",
+        "kind": "screenshot"
+      },
+      {
+        "src": "/media/projects/microservice-mall/04-sentinel.webp",
+        "alt": "Sentinel 控制台的簇点链路页面",
+        "caption": "Sentinel 控制台 · 商品服务簇点链路",
+        "kind": "screenshot"
+      },
+      {
+        "src": "/media/projects/microservice-mall/05-seata.webp",
+        "alt": "Seata 事务信息页面",
+        "caption": "Seata 控制台 · 分布式事务",
+        "kind": "screenshot"
+      },
+      {
+        "src": "/media/projects/microservice-mall/06-rabbitmq.webp",
+        "alt": "RabbitMQ 交换机列表",
+        "caption": "RabbitMQ · 延迟队列与死信交换机",
+        "kind": "screenshot"
+      },
+      {
+        "src": "/media/projects/microservice-mall/07-elasticsearch.webp",
+        "alt": "Elasticsearch Dev Tools 控制台",
+        "caption": "Elasticsearch · IK 中文分词与索引映射",
+        "kind": "screenshot"
+      }
+    ],
+    "frames": [],
+    "videos": [],
+    "links": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "url": "https://github.com/Exusisa-aa/JavaLearnCode/tree/master/hm-springcloud",
+        "note": "仅前后端代码，虚拟机镜像由作者保管"
+      }
+    ],
+    "galleryAspect": null,
+    "theme": {
+      "c1": "#3fd0a8",
+      "c2": "#5fa8e0",
+      "accent": "#45d0b0"
+    },
+    "featured": true
+  }
+]

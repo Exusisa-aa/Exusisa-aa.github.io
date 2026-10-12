@@ -1,0 +1,119 @@
+/* ============================================================================
+   玻璃拟态与通用控件
+   ========================================================================== */
+
+/* ---- 玻璃卡片 ----
+   两层极淡的白色渐变 + 背景模糊 + 1px 描边，就是全部。
+   hover 只动 transform，不动 margin/padding —— 避免触发重排。 */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--r-card);
+  transition:
+    transform 0.45s var(--ease),
+    border-color 0.45s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* ---- 等宽标签 ----
+   全站所有"元信息"都走这个：编号、技术栈、时间、分类。
+   衬线标题 + 等宽标签的反差，是这套设计最核心的观感来源。 */
+.mono-tag {
+  font-family: var(--mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.36rem 0.68rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--r-pill);
+  color: rgba(241, 241, 246, 0.72);
+  background: rgba(8, 9, 16, 0.36);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* ---- 按钮 ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #0a0a12;
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.35s,
+    background var(--theme-transition);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* 次要按钮：玻璃质感，靠描边区分 */
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn.ghost:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 小号胶囊按钮（项目卡里的链接） */
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1.12rem;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.3s,
+    background 0.3s,
+    border-color 0.3s;
+}
+
+.btn-sm:hover {
+  transform: translateY(-2px);
+  border-color: #fff;
+}
+
+.btn-sm.primary {
+  color: #071014;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-sm.secondary {
+  color: #fff;
+  background: rgba(10, 11, 19, 0.48);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}

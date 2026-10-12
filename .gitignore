@@ -1,0 +1,32 @@
+# 依赖
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 构建产物
+web/dist/
+
+# ⚠️ web/public/data/ 是有意提交进仓库的 ——
+# 它就是静态快照，GitHub Pages 直接托管它。不要忽略。
+
+# 本地数据库（联系表单留言 + 访客统计）
+server/*.db
+server/*.db-journal
+
+# 环境变量（里面可能有 Web3Forms key）
+.env
+.env.local
+.env.production.local
+
+# 截图与调试产物
+.shots/
+.chrome-profile/
+*.log
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

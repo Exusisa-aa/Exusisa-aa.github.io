@@ -1,0 +1,12 @@
+# 统一换行符。这个仓库在 Windows 上编辑、在 Linux 上构建（GitHub Actions），
+# 不锁定的话 Git 会在检出时把文本文件转成 CRLF，diff 和 CI 都容易出噪音。
+* text=auto eol=lf
+
+# 二进制文件：明确标出来，免得 Git 尝试做行尾转换把文件弄坏
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.mp4   binary
+*.pdf   binary
+*.ico   binary

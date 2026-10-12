@@ -1,0 +1,53 @@
+{
+  "id": "zhonghui-bidding",
+  "order": 5,
+  "title": "招投标网",
+  "subtitle": "中惠云启科技集团",
+  "period": "【待填】",
+  "role": "【待填】",
+  "team": "",
+  "status": "internship",
+  "category": [
+    "java-backend",
+    "frontend"
+  ],
+  "tags": [
+    "SpringBoot",
+    "MyBatis-Plus",
+    "Vue3",
+    "MySQL"
+  ],
+  "summary": "中惠云启科技集团的招投标网，文章展示模块",
+  "description": "【待填】建议写：招标/投标的业务流程、搜索怎么做的、\n有没有用到 Elasticsearch、并发或数据量上的考量。\n",
+  "highlights": [
+    "【待填】"
+  ],
+  "metrics": [],
+  "stack": {
+    "language": [
+      "Java",
+      "SQL"
+    ],
+    "framework": [
+      "SpringBoot",
+      "MyBatis-Plus",
+      "Vue3"
+    ],
+    "middleware": [
+      "Elasticsearch"
+    ],
+    "infra": [
+      "MySQL",
+      "Nginx"
+    ]
+  },
+  "cover": "/media/projects/zhonghui-bidding/cover.webp",
+  "images": [],
+  "gallery": [],
+  "frames": [],
+  "videos": [],
+  "links": [],
+  "galleryAspect": null,
+  "theme": null,
+  "featured": false
+}

@@ -1,0 +1,95 @@
+# 微服务商城平台
+#
+# 这一项原来是轮播里的「微服务集群部署」，现在升格成独立分镜，
+# 并把运行截图做成了自动轮播的演示框。
+#
+# 下面写的都是**可从截图和简历原文核对的事实**（用了哪些组件、集群拓扑长什么样）。
+# 带【待填】的是需要你自己补的叙事部分 —— 我没有替你编。
+
+id: microservice-mall
+order: 6
+title: 微服务商城平台
+subtitle: SpringCloud 微服务 · Docker 编排部署
+
+period: "【待填】"
+role: "【待填】你在其中负责什么"
+status: personal
+
+category: [microservice, devops, java-backend]
+tags: [Docker, Nacos, Sentinel, Seata, RabbitMQ, Elasticsearch, Redis, MySQL, Nginx , 网关 , 服务模块架构]
+
+summary: 用 Docker 编排整套 SpringCloud 微服务商城：Nacos 注册与配置中心、Sentinel 流控熔断、Seata 分布式事务、RabbitMQ 消息与延迟队列、Redis 分片集群、Elasticsearch 商品检索。
+
+description: |
+  【待填】建议补：
+  - 商城有哪些业务模块（截图里能看到购物车、商品、用户服务）
+  - 容器编排怎么组织的（compose 分了几个网络/数据卷、启动顺序）
+  - 遇到的具体问题（比如某个组件先起后起导致注册失败之类）
+
+highlights:
+  # 以下四条都能在截图里看到
+  - Redis 分片集群 9 节点 3 主 6 从，主从复制状态 online
+  - Nacos 作为配置中心集中管理 10 条共享配置（数据源 / Redis / 日志 / 网关路由等）
+  - Sentinel 接入商品服务的簇点链路，配置流控、熔断、热点规则
+  - RabbitMQ 声明延迟队列与死信交换机，承载支付、交易等异步流程
+
+metrics: []
+
+stack:
+  language: [Java, Shell, YAML]
+  framework: [SpringCloud, Docker Compose]
+  middleware: [Nacos, Sentinel, Seata, RabbitMQ, Elasticsearch, Kibana, Redis, MySQL]
+  infra: [Docker, Nginx]
+
+cover: /media/projects/microservice-mall/01-docker-ps.webp
+
+# 这一屏的主视觉 —— 7 张运行截图自动轮播。
+# ⚠️ caption 必须和图片内容对得上：改图片顺序时记得同步改说明，
+#    否则会出现「图是 Nacos、说明写的却是 Redis」这种低级错位。
+gallery:
+  - src: /media/projects/microservice-mall/01-docker-ps.webp
+    kind: screenshot
+    alt: docker ps 查看全部容器运行状态
+    caption: 全部容器运行中 · Redis 分片 / Nacos / Seata / Sentinel / RabbitMQ / ES / Kibana / MySQL
+
+  - src: /media/projects/microservice-mall/02-redis-cluster.webp
+    kind: diagram
+    alt: Redis 集群节点列表与主从复制状态
+    caption: Redis 分片集群 · cluster nodes 与主从复制状态
+
+  - src: /media/projects/microservice-mall/03-nacos-config.webp
+    kind: screenshot
+    alt: Nacos 配置管理页面
+    caption: Nacos 配置中心 · 集中管理共享配置与网关路由
+
+  - src: /media/projects/microservice-mall/04-sentinel.webp
+    kind: screenshot
+    alt: Sentinel 控制台的簇点链路页面
+    caption: Sentinel 控制台 · 商品服务簇点链路
+
+  - src: /media/projects/microservice-mall/05-seata.webp
+    kind: screenshot
+    alt: Seata 事务信息页面
+    caption: Seata 控制台 · 分布式事务
+
+  - src: /media/projects/microservice-mall/06-rabbitmq.webp
+    kind: screenshot
+    alt: RabbitMQ 交换机列表
+    caption: RabbitMQ · 延迟队列与死信交换机
+
+  - src: /media/projects/microservice-mall/07-elasticsearch.webp
+    kind: screenshot
+    alt: Elasticsearch Dev Tools 控制台
+    caption: Elasticsearch · IK 中文分词与索引映射
+
+links:
+  - type: github
+    label: GitHub
+    url: https://github.com/Exusisa-aa/JavaLearnCode/tree/master/hm-springcloud
+    # 显示在按钮右边的小字，留空则不显示
+    note: 仅前后端代码，虚拟机镜像由作者保管
+
+theme: { c1: "#3fd0a8", c2: "#5fa8e0", accent: "#45d0b0" }
+
+# 独立分镜
+featured: true

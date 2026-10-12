@@ -1,0 +1,72 @@
+# 荣誉与资质
+#
+# type:   award(奖项) | copyright(软著) | cert(证书)
+# level:  national | provincial | school
+#
+# cert.src 指向证书大图，图片放在 web/public/certs/ 下。
+# 填了 cert.src 的条目可以点开看大图；留 null 的条目点击没反应，
+# 也不会显示「⊕」提示（避免点了没反应让人以为坏了）。
+
+honors:
+  - id: gd-skills
+    title: 广东省职业院校学生专业技能大赛（高职组）· 应用软件系统开发赛项 一等奖
+    type: award
+    level: provincial
+    issuer: 广东省教育厅
+    date: "2026.04"
+    featured: true
+    meta:
+      # 证书上抄下来的信息，展示在列表里做佐证
+      certificateNo: "2026GDJNDS20622"
+    cert:
+      src: /certs/gd-skills-2026.png
+      alt: 2025-2026 学年广东省职业院校学生专业技能大赛（高职组）应用软件系统开发赛项一等奖证书
+
+  - id: software-copyright
+    title: 计算机软件著作权登记证书 · 基于 YOLO 算法的水产养殖网箱网衣破损检测平台 V1.0
+    type: copyright
+    level: national
+    issuer: 中华人民共和国国家版权局
+    date: "2026.08"
+    featured: true
+    meta:
+      certificateNo: "软著登字第 18018941 号"
+      registrationNo: "2026SR0804660"
+    cert:
+      src: /certs/software-copyright-2026.png
+      alt: 计算机软件著作权登记证书 —— 基于 YOLO 算法的水产养殖网箱网衣破损检测平台 V1.0
+
+  - id: harmonyos-senior
+    title: 鸿蒙应用高级开发者认证
+    type: cert
+    # vendor = 厂商认证。华为发的证，别写成「国家级」——那是政府级别的意思
+    level: vendor
+    issuer: 华为开发者联盟
+    featured: true
+    # 有证书图之后填上，格式：
+    # cert:
+    #   src: /certs/harmonyos-senior.png
+    #   alt: 鸿蒙应用高级开发者认证证书
+    cert: null
+
+  - id: web-design
+    title: 校级网页设计比赛 一等奖
+    type: award
+    level: school
+    issuer: 深圳职业技术大学
+    featured: true
+    cert: null
+
+  - id: outstanding-league
+    title: 优秀团员证书
+    type: cert
+    level: school
+    featured: false
+    cert: null
+
+  - id: cet4
+    title: 大学英语四级（CET-4）
+    type: cert
+    level: national
+    featured: false
+    cert: null

@@ -1,0 +1,65 @@
+{
+  "id": "microservice-docker",
+  "order": 6,
+  "title": "微服务集群部署",
+  "subtitle": "Docker 集成部署实践",
+  "period": "【待填】",
+  "role": "【待填】",
+  "team": "",
+  "status": "personal",
+  "category": [
+    "devops",
+    "java-backend",
+    "microservice"
+  ],
+  "tags": [
+    "Docker",
+    "Docker-Compose",
+    "Nginx",
+    "Nacos",
+    "Sentinel",
+    "Seata",
+    "RabbitMQ",
+    "Elasticsearch",
+    "Kibana",
+    "Redis"
+  ],
+  "summary": "【待填】一句话说明这个部署实践验证了什么",
+  "description": "【待填】建议写：整套环境包含哪些组件、容器编排怎么组织的、\n网络与数据卷怎么规划、启动顺序和健康检查怎么处理。\n",
+  "highlights": [
+    "【待填】MySQL、Nacos、Sentinel、Seata、Nginx、RabbitMQ、Elasticsearch、Kibana、Redis 分片集群的 Docker 化集成"
+  ],
+  "metrics": [],
+  "stack": {
+    "language": [
+      "Shell",
+      "YAML"
+    ],
+    "framework": [
+      "Docker Compose"
+    ],
+    "middleware": [
+      "MySQL",
+      "Nacos",
+      "Sentinel",
+      "Seata",
+      "RabbitMQ",
+      "Elasticsearch",
+      "Kibana",
+      "Redis"
+    ],
+    "infra": [
+      "Docker",
+      "Nginx",
+      "Ubuntu"
+    ]
+  },
+  "cover": null,
+  "images": [],
+  "gallery": [],
+  "frames": [],
+  "videos": [],
+  "links": [],
+  "theme": null,
+  "featured": false
+}

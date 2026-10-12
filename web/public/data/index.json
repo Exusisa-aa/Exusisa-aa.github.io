@@ -1,0 +1,961 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-12T15:32:17+00:00",
+  "contentHash": "3d76f72243e51e54",
+  "profile": {
+    "name": "陈明辉",
+    "nameEn": "CHEN MINGHUI",
+    "age": 22,
+    "headline": "Java 全栈开发工程师 · Agent 智能体开发",
+    "heroTitle": "让 Agent 工作流",
+    "heroTitleAccent": "被我指挥。",
+    "tagline": "让 Agent 工作流被我指挥，而不是牵着鼻子走。",
+    "location": "广东 · 深圳",
+    "status": "open",
+    "statusText": "大三在读",
+    "contacts": [
+      {
+        "type": "phone",
+        "label": "电话",
+        "value": "13602333144",
+        "href": "tel:13602333144",
+        "primary": true,
+        "compose": ""
+      },
+      {
+        "type": "email",
+        "label": "QQ 邮箱",
+        "value": "3638403983@qq.com",
+        "href": "mailto:3638403983@qq.com",
+        "primary": true,
+        "compose": "https://mail.qq.com/"
+      },
+      {
+        "type": "email",
+        "label": "Gmail",
+        "value": "Aa3638403983@gmail.com",
+        "href": "mailto:Aa3638403983@gmail.com",
+        "primary": false,
+        "compose": "https://mail.google.com/mail/?view=cm&fs=1&to=Aa3638403983@gmail.com"
+      },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "value": "Exusisa-aa",
+        "href": "https://github.com/Exusisa-aa",
+        "primary": true,
+        "compose": ""
+      }
+    ],
+    "education": [
+      {
+        "school": "深圳职业技术大学",
+        "major": "软件技术",
+        "degree": "大专",
+        "grade": "大三在读",
+        "start": "2024.09",
+        "end": "至今",
+        "logo": ""
+      }
+    ],
+    "badges": [
+      {
+        "value": "1",
+        "label": "广东省职业技能大赛省一",
+        "cert": "/certs/gd-skills-2026.png"
+      },
+      {
+        "value": "1",
+        "label": "软件著作权",
+        "cert": "/certs/software-copyright-2026.png"
+      },
+      {
+        "value": "1",
+        "label": "校级网页设计一等奖",
+        "cert": null
+      }
+    ],
+    "resumePdf": "/files/ChenMinghui-Resume.pdf",
+    "updatedAt": "2026-10-12"
+  },
+  "skills": {
+    "groups": [
+      {
+        "id": "java-backend",
+        "title": "Java 后端",
+        "accent": "#7aa2ff",
+        "level": "主力方向",
+        "items": [
+          {
+            "name": "Java 基础",
+            "keywords": [
+              "动态代理",
+              "反射",
+              "多线程"
+            ]
+          },
+          {
+            "name": "Web 接口开发",
+            "keywords": [
+              "MyBatis / MyBatis-Plus",
+              "SpringBoot",
+              "Maven",
+              "RESTful",
+              "去 SQL 化"
+            ]
+          },
+          {
+            "name": "Spring 生态",
+            "keywords": [
+              "SpringMVC",
+              "SpringAOP",
+              "Spring 事务",
+              "MP 锁"
+            ]
+          },
+          {
+            "name": "微服务",
+            "keywords": [
+              "api-biz-dto 拆分",
+              "微服务网关与登录拦截",
+              "Nacos 注册中心与配置热更新",
+              "OpenFeign 服务间调用",
+              "Sentinel 流控隔离熔断",
+              "Seata 分布式事务 XA / AT",
+              "RabbitMQ 消息与死信延迟",
+              "Elasticsearch DSL 查询优化"
+            ]
+          },
+          {
+            "name": "第三方能力",
+            "keywords": [
+              "阿里云 OSS 存储",
+              "JWT 令牌生成与解析",
+              "百度云人脸识别"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "database",
+        "title": "数据库",
+        "accent": "#4fe0c8",
+        "level": "主力方向",
+        "items": [
+          {
+            "name": "SQL 能力",
+            "keywords": [
+              "多表关联",
+              "视图",
+              "联合索引",
+              "SQL 性能分析"
+            ]
+          },
+          {
+            "name": "底层原理",
+            "keywords": [
+              "ES 倒排索引",
+              "Seata AT 的 undo_log",
+              "数据库重启后的 redo_log"
+            ]
+          },
+          {
+            "name": "集群架构",
+            "keywords": [
+              "分库分表",
+              "主从复制",
+              "读写分离",
+              "Mycat",
+              "Mycat-web 监控"
+            ]
+          },
+          {
+            "name": "缓存",
+            "keywords": [
+              "Redis 基础作用",
+              "Redis 读写操作"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai",
+        "title": "AI 与 Agent",
+        "accent": "#a58cff",
+        "level": "重点方向",
+        "items": [
+          {
+            "name": "本地大模型",
+            "keywords": [
+              "Ollama 本地部署",
+              "DeepSeek",
+              "千问向量嵌入模型"
+            ]
+          },
+          {
+            "name": "RAG 智能体",
+            "keywords": [
+              "LangChain 基础库",
+              "LangGraph 流程控制",
+              "PostgreSQL",
+              "FastAPI 后端",
+              "Chroma 向量数据库",
+              "动态提示词替换",
+              "REACT 智能体"
+            ]
+          },
+          {
+            "name": "Agent 工作流",
+            "keywords": [
+              "ClaudeCode",
+              "Codex",
+              "Skills 控制输出质量",
+              "多 Agent 协作",
+              "自动化工作流"
+            ]
+          },
+          {
+            "name": "计算机视觉",
+            "keywords": [
+              "Ultralytics",
+              "YOLO 模型训练",
+              "模型打包与部署"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "devops",
+        "title": "部署与运维",
+        "accent": "#5fc8e8",
+        "level": "熟练",
+        "items": [
+          {
+            "name": "容器化",
+            "keywords": [
+              "Docker",
+              "Dockerfile",
+              "Docker-Compose",
+              "Nginx / MySQL / Nacos 镜像"
+            ]
+          },
+          {
+            "name": "Linux",
+            "keywords": [
+              "Ubuntu",
+              "常用命令",
+              "Vim",
+              "防火墙操作",
+              "FinalShell"
+            ]
+          },
+          {
+            "name": "版本控制",
+            "keywords": [
+              "Git",
+              "GitHub 代码仓库"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "frontend",
+        "title": "前端",
+        "accent": "#ffab7c",
+        "level": "熟练",
+        "items": [
+          {
+            "name": "基础",
+            "keywords": [
+              "HTML5",
+              "CSS3",
+              "JavaScript"
+            ]
+          },
+          {
+            "name": "框架",
+            "keywords": [
+              "Vue2",
+              "Vue3",
+              "Axios",
+              "Pinia 数据持久化"
+            ]
+          },
+          {
+            "name": "工程化",
+            "keywords": [
+              "Node.js",
+              "Vite",
+              "webpack",
+              "NPM / PNPM / YARN",
+              "ESLint 规范化",
+              "Husky 代码检查"
+            ]
+          },
+          {
+            "name": "组件与场景",
+            "keywords": [
+              "VantUI / ElementPlus",
+              "Swiper",
+              "WangEditor / QuillEditor",
+              "ECharts",
+              "Bootstrap 栅格",
+              "移动端网页",
+              "ArkUI 鸿蒙",
+              "微信小程序"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "honors": {
+    "honors": [
+      {
+        "id": "gd-skills",
+        "title": "广东省职业院校学生专业技能大赛（高职组）· 应用软件系统开发赛项 一等奖",
+        "type": "award",
+        "level": "provincial",
+        "issuer": "广东省教育厅",
+        "date": "2026.04",
+        "featured": true,
+        "meta": {
+          "certificateNo": "2026GDJNDS20622"
+        },
+        "cert": {
+          "src": "/certs/gd-skills-2026.png",
+          "alt": "2025-2026 学年广东省职业院校学生专业技能大赛（高职组）应用软件系统开发赛项一等奖证书"
+        }
+      },
+      {
+        "id": "software-copyright",
+        "title": "计算机软件著作权登记证书 · 基于 YOLO 算法的水产养殖网箱网衣破损检测平台 V1.0",
+        "type": "copyright",
+        "level": "national",
+        "issuer": "中华人民共和国国家版权局",
+        "date": "2026.08",
+        "featured": true,
+        "meta": {
+          "certificateNo": "软著登字第 18018941 号",
+          "registrationNo": "2026SR0804660"
+        },
+        "cert": {
+          "src": "/certs/software-copyright-2026.png",
+          "alt": "计算机软件著作权登记证书 —— 基于 YOLO 算法的水产养殖网箱网衣破损检测平台 V1.0"
+        }
+      },
+      {
+        "id": "harmonyos-senior",
+        "title": "鸿蒙应用高级开发者认证",
+        "type": "cert",
+        "level": "vendor",
+        "issuer": "华为开发者联盟",
+        "date": "",
+        "featured": true,
+        "meta": {},
+        "cert": null
+      },
+      {
+        "id": "web-design",
+        "title": "校级网页设计比赛 一等奖",
+        "type": "award",
+        "level": "school",
+        "issuer": "深圳职业技术大学",
+        "date": "",
+        "featured": true,
+        "meta": {},
+        "cert": null
+      },
+      {
+        "id": "outstanding-league",
+        "title": "优秀团员证书",
+        "type": "cert",
+        "level": "school",
+        "issuer": "",
+        "date": "",
+        "featured": false,
+        "meta": {},
+        "cert": null
+      },
+      {
+        "id": "cet4",
+        "title": "大学英语四级（CET-4）",
+        "type": "cert",
+        "level": "national",
+        "issuer": "",
+        "date": "",
+        "featured": false,
+        "meta": {},
+        "cert": null
+      }
+    ]
+  },
+  "courses": {
+    "courses": [
+      "软件工程：全栈开发、测试、部署",
+      "Agent 工作流和 AI 应用开发",
+      "SQL 编写及数据库原理和架构",
+      "Linux 和 Windows 操作系统",
+      "爬虫和数据分析",
+      "其他：C 语言、鸿蒙、安卓"
+    ]
+  },
+  "selfEvaluation": "我大一的时候做过一些很有意思的项目，即使当时的我没学 AOP 思想，却已经用上了动态代理；即使没学 Tomcat，我也会用线程池启动我的项目；即使没学数据库，我却用 XML 的解析模拟了数据的存储，故我认为我还是对这行感兴趣的。\n\n我刚接触这行的时候，AI 的发展已经初显端倪，但我不想随波逐流，让 AI 完全接管我的代码。作为一个成熟的全栈开发者，即使是 AI 即将取代前端和去 SQL 化的历史节点，我也要为了写出更好的后端代码，将生产的全栈知识和架构刻入大脑——我要让 Agent 工作流被我指挥，生产出符合后端开发架构体系的代码，再按我的知识体系审查，而不是被 Agent 工作流牵着鼻子走，并且要用一个成熟的后端开发者的视角看待 AI 应用开发和 Agent 工作流。",
+  "site": {
+    "title": "陈明辉 — Java 全栈开发 / Agent 智能体",
+    "description": "陈明辉的个人作品集 —— Java 全栈开发工程师 / Agent 智能体开发",
+    "lang": "zh-CN",
+    "url": "https://example.github.io/portfolio/"
+  },
+  "stage": {
+    "sections": [
+      {
+        "id": "hero",
+        "nav": "首屏",
+        "type": "hero",
+        "projectId": null,
+        "theme": {
+          "c1": "#7c8cff",
+          "c2": "#4fe0c8",
+          "accent": "#8b9dff"
+        }
+      },
+      {
+        "id": "about",
+        "nav": "关于",
+        "type": "about",
+        "projectId": null,
+        "theme": {
+          "c1": "#c8b89d",
+          "c2": "#7c8cff",
+          "accent": "#c8bfa8"
+        }
+      },
+      {
+        "id": "skills",
+        "nav": "能力",
+        "type": "skills",
+        "projectId": null,
+        "theme": {
+          "c1": "#9d7cff",
+          "c2": "#7c8cff",
+          "accent": "#a58cff"
+        }
+      },
+      {
+        "id": "p-microservice-mall",
+        "nav": "微服务商城",
+        "type": "project",
+        "projectId": "microservice-mall",
+        "theme": {
+          "c1": "#3fd0a8",
+          "c2": "#5fa8e0",
+          "accent": "#45d0b0"
+        }
+      },
+      {
+        "id": "p-mycat-cluster",
+        "nav": "数据库集群",
+        "type": "project",
+        "projectId": "mycat-cluster",
+        "theme": {
+          "c1": "#4fc3e0",
+          "c2": "#7c8cff",
+          "accent": "#5fc8e8"
+        }
+      },
+      {
+        "id": "works",
+        "nav": "更多作品",
+        "type": "carousel",
+        "projectId": null,
+        "theme": {
+          "c1": "#5fc8e8",
+          "c2": "#8b9dff",
+          "accent": "#6fc0e8"
+        }
+      },
+      {
+        "id": "honors",
+        "nav": "荣誉",
+        "type": "honors",
+        "projectId": null,
+        "theme": {
+          "c1": "#ffb37c",
+          "c2": "#ffd07c",
+          "accent": "#ffab7c"
+        }
+      },
+      {
+        "id": "selfeval",
+        "nav": "自述",
+        "type": "selfeval",
+        "projectId": null,
+        "theme": {
+          "c1": "#a88cff",
+          "c2": "#4fe0c8",
+          "accent": "#b09cff"
+        }
+      },
+      {
+        "id": "contact",
+        "nav": "联系",
+        "type": "contact",
+        "projectId": null,
+        "theme": {
+          "c1": "#7c8cff",
+          "c2": "#4fe0c8",
+          "accent": "#8b9dff"
+        }
+      }
+    ],
+    "carousel": {
+      "autoplayMs": 5600,
+      "lockMs": 670,
+      "kenBurnsMs": 7000,
+      "swipePx": 48,
+      "offsetPx": 64,
+      "scale": 0.985
+    },
+    "video": {
+      "aspect": "16 / 10",
+      "seekOnHover": true
+    }
+  },
+  "projects": [
+    {
+      "id": "underwater-yolo",
+      "order": 1,
+      "title": "水下养殖数字化智能检测平台",
+      "subtitle": "YOLO 视觉 · 检测与计数",
+      "period": "【待填】例如 2025.03 – 2025.06",
+      "role": "【待填】你在团队里负责什么",
+      "team": "【待填】团队规模，或个人项目",
+      "status": "competition",
+      "category": [
+        "vision",
+        "ai-agent"
+      ],
+      "tags": [
+        "Python",
+        "Ultralytics",
+        "YOLO",
+        "OpenCV",
+        "ONNX"
+      ],
+      "summary": "基于水下机器鱼传感器和其拍摄图像的数字化检测平台，不仅记录数据，而且可以识别鱼病和网衣破损",
+      "description": "【待填】写 2–4 句。建议覆盖：\n- 为什么要做（养殖场景下的什么痛点）\n- 你具体做了什么（数据、模型、训练、部署）\n- 结果如何（但不要写没有依据的数字）\n",
+      "highlights": [
+        "【待填】",
+        "【待填】",
+        "【待填】"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "Python"
+        ],
+        "framework": [
+          "Ultralytics YOLO",
+          "OpenCV",
+          "ONNX Runtime"
+        ],
+        "middleware": [],
+        "infra": [
+          "Docker",
+          "Ubuntu"
+        ]
+      },
+      "cover": "/media/projects/underwater-yolo/cover.webp",
+      "images": [],
+      "gallery": [],
+      "frames": [],
+      "videos": [],
+      "links": [],
+      "galleryAspect": null,
+      "theme": {
+        "c1": "#4fe0c8",
+        "c2": "#7ce0a8",
+        "accent": "#54e0b8"
+      },
+      "featured": false
+    },
+    {
+      "id": "mycat-cluster",
+      "order": 2,
+      "title": "基于 Mycat 的数据库集群",
+      "subtitle": "水平分表 · 二主二从读写分离 · 主备自动切换",
+      "period": "【待填】",
+      "role": "【待填】独立搭建 / 团队协作",
+      "team": "",
+      "status": "personal",
+      "category": [
+        "database",
+        "devops"
+      ],
+      "tags": [
+        "MySQL",
+        "Mycat",
+        "Mycat-eye",
+        "水平分表",
+        "主从复制",
+        "读写分离",
+        "主备切换",
+        "Linux"
+      ],
+      "summary": "用 Mycat 按 id 取模把写入水平拆到两个主库，每个分片再配一台备用主库和各带一个从库，合计 8 个 MySQL 节点；主库故障时备用主库接管写入。",
+      "description": "整套集群分两层：Mycat 在前面做分片路由和读写分离，后面是两组 MySQL 主从。\n\n写入按 id % 2 水平分表落到 Master1 / Master2。每个分片是一主一备的结构：\nMaster1 配备用主库 Master11，两台再各带一个从库（Slave1 / Slave11）。\n两个分片合计 8 个 MySQL 节点，加 Mycat 一共 9 台机器。\n\nMaster1 与 Master2 只接受写入，其余 6 个节点（两台备用主库 + 四个从库）\n全部只承接读 —— 写集中在两台、读摊到六台。\n主库挂掉时，Master11 接替 Master1、Master22 接替 Master2 执行写操作。\n\nMycat 侧通过 schema.xml 声明四组 dataHost，balance=\"1\" 让读请求在\n各读库之间随机分发，switchType=\"1\" 打开主库故障自动切换。\n",
+      "highlights": [
+        "水平分表：写入按 id % 2 路由到 Master1 与 Master2，避免单主库数据量过大拖慢性能",
+        "每个分片「二主二从」：Master1 配 Master11、Master2 配 Master22，两台再各带一个从库",
+        "共 8 个 MySQL 节点 + 1 个 Mycat，分两个分片各 4 节点",
+        "读写分离：只有 Master1 / Master2 接受写入，其余 6 个节点（备用主库 + 从库）全部只读",
+        "故障接管：Master1 挂掉由 Master11 接替写、Master2 挂掉由 Master22 接替写",
+        "配置为 balance=\"1\" 读写分离模式，Mycat 在提供读的节点之间随机分发请求",
+        "用 Mycat-eye 监控 SQL 读写次数与响应时间分布"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "SQL"
+        ],
+        "framework": [
+          "Mycat",
+          "Mycat-eye"
+        ],
+        "middleware": [
+          "MySQL"
+        ],
+        "infra": [
+          "Linux"
+        ]
+      },
+      "cover": "/media/projects/mycat-cluster/01-architecture.webp",
+      "images": [],
+      "gallery": [
+        {
+          "src": "/media/projects/mycat-cluster/01-architecture.webp",
+          "alt": "手绘的 Mycat 数据库集群架构图",
+          "caption": "集群拓扑 · Mycat 分片路由 + 8 个 MySQL 节点（id % 2 分成两个分片，每片二主二从）",
+          "kind": "architecture"
+        },
+        {
+          "src": "/media/projects/mycat-cluster/02-schema-xml.webp",
+          "alt": "Mycat schema.xml 中 dataHost 的配置",
+          "caption": "schema.xml · 2 个 dataHost 各声明 2 个 writeHost，balance=1 读写分离、switchType=1 自动切换",
+          "kind": "diagram"
+        },
+        {
+          "src": "/media/projects/mycat-cluster/03-mycateye.webp",
+          "alt": "Mycat-eye 的 SQL 统计页面",
+          "caption": "Mycat-eye · SQL 读写次数与响应时间分布",
+          "kind": "screenshot"
+        }
+      ],
+      "frames": [],
+      "videos": [],
+      "links": [
+        {
+          "type": "other",
+          "label": "",
+          "url": "",
+          "note": "仅展示，虚拟机镜像由作者保管"
+        }
+      ],
+      "galleryAspect": 1.5,
+      "theme": {
+        "c1": "#4fc3e0",
+        "c2": "#7c8cff",
+        "accent": "#5fc8e8"
+      },
+      "featured": true
+    },
+    {
+      "id": "zhonghui-admin",
+      "order": 3,
+      "title": "后台管理系统",
+      "subtitle": "中惠云启科技集团",
+      "period": "【待填】",
+      "role": "【待填】",
+      "team": "",
+      "status": "internship",
+      "category": [
+        "java-backend",
+        "frontend"
+      ],
+      "tags": [
+        "SpringBoot",
+        "MyBatis-Plus",
+        "Vue3",
+        "ElementPlus",
+        "MySQL",
+        "Redis",
+        "JWT",
+        "Nginx"
+      ],
+      "summary": "中惠云启科技集团的后台管理系统，涵盖120+的表数和多个模块",
+      "description": "【待填】建议写：系统的业务模块有哪些、你负责哪些模块、\n权限/认证怎么做的、有没有做性能上的优化。\n",
+      "highlights": [
+        "【待填】"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "Java",
+          "SQL"
+        ],
+        "framework": [
+          "SpringBoot",
+          "MyBatis-Plus",
+          "Vue3",
+          "ElementPlus"
+        ],
+        "middleware": [
+          "Redis"
+        ],
+        "infra": [
+          "MySQL",
+          "Nginx"
+        ]
+      },
+      "cover": "/media/projects/zhonghui-admin/cover.webp",
+      "images": [],
+      "gallery": [],
+      "frames": [],
+      "videos": [],
+      "links": [],
+      "galleryAspect": null,
+      "theme": null,
+      "featured": false
+    },
+    {
+      "id": "zhonghui-datav",
+      "order": 4,
+      "title": "数据可视化系统",
+      "subtitle": "中惠云启科技集团",
+      "period": "【待填】",
+      "role": "【待填】",
+      "team": "",
+      "status": "internship",
+      "category": [
+        "frontend",
+        "java-backend"
+      ],
+      "tags": [
+        "Vue3",
+        "ECharts",
+        "SpringBoot",
+        "MySQL",
+        "data-v"
+      ],
+      "summary": "中惠云启科技集团的数据可视化系统，用于大屏展示",
+      "description": "【待填】建议写：可视化的指标有哪些、数据怎么聚合的、\n大屏适配和实时刷新怎么做的。\n",
+      "highlights": [
+        "【待填】"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "Java",
+          "JavaScript"
+        ],
+        "framework": [
+          "Vue3",
+          "ECharts",
+          "SpringBoot"
+        ],
+        "middleware": [],
+        "infra": [
+          "MySQL"
+        ]
+      },
+      "cover": "/media/projects/zhonghui-datav/cover.webp",
+      "images": [],
+      "gallery": [],
+      "frames": [],
+      "videos": [],
+      "links": [],
+      "galleryAspect": null,
+      "theme": null,
+      "featured": false
+    },
+    {
+      "id": "zhonghui-bidding",
+      "order": 5,
+      "title": "招投标网",
+      "subtitle": "中惠云启科技集团",
+      "period": "【待填】",
+      "role": "【待填】",
+      "team": "",
+      "status": "internship",
+      "category": [
+        "java-backend",
+        "frontend"
+      ],
+      "tags": [
+        "SpringBoot",
+        "MyBatis-Plus",
+        "Vue3",
+        "MySQL"
+      ],
+      "summary": "中惠云启科技集团的招投标网，文章展示模块",
+      "description": "【待填】建议写：招标/投标的业务流程、搜索怎么做的、\n有没有用到 Elasticsearch、并发或数据量上的考量。\n",
+      "highlights": [
+        "【待填】"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "Java",
+          "SQL"
+        ],
+        "framework": [
+          "SpringBoot",
+          "MyBatis-Plus",
+          "Vue3"
+        ],
+        "middleware": [
+          "Elasticsearch"
+        ],
+        "infra": [
+          "MySQL",
+          "Nginx"
+        ]
+      },
+      "cover": "/media/projects/zhonghui-bidding/cover.webp",
+      "images": [],
+      "gallery": [],
+      "frames": [],
+      "videos": [],
+      "links": [],
+      "galleryAspect": null,
+      "theme": null,
+      "featured": false
+    },
+    {
+      "id": "microservice-mall",
+      "order": 6,
+      "title": "微服务商城平台",
+      "subtitle": "SpringCloud 微服务 · Docker 编排部署",
+      "period": "【待填】",
+      "role": "【待填】你在其中负责什么",
+      "team": "",
+      "status": "personal",
+      "category": [
+        "microservice",
+        "devops",
+        "java-backend"
+      ],
+      "tags": [
+        "Docker",
+        "Nacos",
+        "Sentinel",
+        "Seata",
+        "RabbitMQ",
+        "Elasticsearch",
+        "Redis",
+        "MySQL",
+        "Nginx",
+        "网关",
+        "服务模块架构"
+      ],
+      "summary": "用 Docker 编排整套 SpringCloud 微服务商城：Nacos 注册与配置中心、Sentinel 流控熔断、Seata 分布式事务、RabbitMQ 消息与延迟队列、Redis 分片集群、Elasticsearch 商品检索。",
+      "description": "【待填】建议补：\n- 商城有哪些业务模块（截图里能看到购物车、商品、用户服务）\n- 容器编排怎么组织的（compose 分了几个网络/数据卷、启动顺序）\n- 遇到的具体问题（比如某个组件先起后起导致注册失败之类）\n",
+      "highlights": [
+        "Redis 分片集群 9 节点 3 主 6 从，主从复制状态 online",
+        "Nacos 作为配置中心集中管理 10 条共享配置（数据源 / Redis / 日志 / 网关路由等）",
+        "Sentinel 接入商品服务的簇点链路，配置流控、熔断、热点规则",
+        "RabbitMQ 声明延迟队列与死信交换机，承载支付、交易等异步流程"
+      ],
+      "metrics": [],
+      "stack": {
+        "language": [
+          "Java",
+          "Shell",
+          "YAML"
+        ],
+        "framework": [
+          "SpringCloud",
+          "Docker Compose"
+        ],
+        "middleware": [
+          "Nacos",
+          "Sentinel",
+          "Seata",
+          "RabbitMQ",
+          "Elasticsearch",
+          "Kibana",
+          "Redis",
+          "MySQL"
+        ],
+        "infra": [
+          "Docker",
+          "Nginx"
+        ]
+      },
+      "cover": "/media/projects/microservice-mall/01-docker-ps.webp",
+      "images": [],
+      "gallery": [
+        {
+          "src": "/media/projects/microservice-mall/01-docker-ps.webp",
+          "alt": "docker ps 查看全部容器运行状态",
+          "caption": "全部容器运行中 · Redis 分片 / Nacos / Seata / Sentinel / RabbitMQ / ES / Kibana / MySQL",
+          "kind": "screenshot"
+        },
+        {
+          "src": "/media/projects/microservice-mall/02-redis-cluster.webp",
+          "alt": "Redis 集群节点列表与主从复制状态",
+          "caption": "Redis 分片集群 · cluster nodes 与主从复制状态",
+          "kind": "diagram"
+        },
+        {
+          "src": "/media/projects/microservice-mall/03-nacos-config.webp",
+          "alt": "Nacos 配置管理页面",
+          "caption": "Nacos 配置中心 · 集中管理共享配置与网关路由",
+          "kind": "screenshot"
+        },
+        {
+          "src": "/media/projects/microservice-mall/04-sentinel.webp",
+          "alt": "Sentinel 控制台的簇点链路页面",
+          "caption": "Sentinel 控制台 · 商品服务簇点链路",
+          "kind": "screenshot"
+        },
+        {
+          "src": "/media/projects/microservice-mall/05-seata.webp",
+          "alt": "Seata 事务信息页面",
+          "caption": "Seata 控制台 · 分布式事务",
+          "kind": "screenshot"
+        },
+        {
+          "src": "/media/projects/microservice-mall/06-rabbitmq.webp",
+          "alt": "RabbitMQ 交换机列表",
+          "caption": "RabbitMQ · 延迟队列与死信交换机",
+          "kind": "screenshot"
+        },
+        {
+          "src": "/media/projects/microservice-mall/07-elasticsearch.webp",
+          "alt": "Elasticsearch Dev Tools 控制台",
+          "caption": "Elasticsearch · IK 中文分词与索引映射",
+          "kind": "screenshot"
+        }
+      ],
+      "frames": [],
+      "videos": [],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub",
+          "url": "https://github.com/Exusisa-aa/JavaLearnCode/tree/master/hm-springcloud",
+          "note": "仅前后端代码，虚拟机镜像由作者保管"
+        }
+      ],
+      "galleryAspect": null,
+      "theme": {
+        "c1": "#3fd0a8",
+        "c2": "#5fa8e0",
+        "accent": "#45d0b0"
+      },
+      "featured": true
+    }
+  ]
+}

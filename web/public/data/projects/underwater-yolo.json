@@ -1,0 +1,57 @@
+{
+  "id": "underwater-yolo",
+  "order": 1,
+  "title": "水下养殖数字化智能检测平台",
+  "subtitle": "YOLO 视觉 · 检测与计数",
+  "period": "【待填】例如 2025.03 – 2025.06",
+  "role": "【待填】你在团队里负责什么",
+  "team": "【待填】团队规模，或个人项目",
+  "status": "competition",
+  "category": [
+    "vision",
+    "ai-agent"
+  ],
+  "tags": [
+    "Python",
+    "Ultralytics",
+    "YOLO",
+    "OpenCV",
+    "ONNX"
+  ],
+  "summary": "基于水下机器鱼传感器和其拍摄图像的数字化检测平台，不仅记录数据，而且可以识别鱼病和网衣破损",
+  "description": "【待填】写 2–4 句。建议覆盖：\n- 为什么要做（养殖场景下的什么痛点）\n- 你具体做了什么（数据、模型、训练、部署）\n- 结果如何（但不要写没有依据的数字）\n",
+  "highlights": [
+    "【待填】",
+    "【待填】",
+    "【待填】"
+  ],
+  "metrics": [],
+  "stack": {
+    "language": [
+      "Python"
+    ],
+    "framework": [
+      "Ultralytics YOLO",
+      "OpenCV",
+      "ONNX Runtime"
+    ],
+    "middleware": [],
+    "infra": [
+      "Docker",
+      "Ubuntu"
+    ]
+  },
+  "cover": "/media/projects/underwater-yolo/cover.webp",
+  "images": [],
+  "gallery": [],
+  "frames": [],
+  "videos": [],
+  "links": [],
+  "galleryAspect": null,
+  "theme": {
+    "c1": "#4fe0c8",
+    "c2": "#7ce0a8",
+    "accent": "#54e0b8"
+  },
+  "featured": false
+}

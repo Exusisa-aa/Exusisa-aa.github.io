@@ -1,0 +1,243 @@
+/* ============================================================================
+   分镜通用排版 —— 每一屏共享的骨架
+   ========================================================================== */
+
+/* ---- 滚动容器：全屏吸附 ---- */
+.scroller {
+  position: relative;
+  z-index: var(--z-content);
+  /* 用 dvh 不用 vh —— 移动端地址栏收起/展开时 vh 会跳，首屏会被切掉 */
+  height: 100dvh;
+  overflow-y: auto;
+  /*
+    用 proximity 而不是 mandatory。
+    mandatory 的问题是：当某一屏的内容高于视口（技能屏、联系屏都会），
+    浏览器会一直把它吸附回顶部，超出部分永远滚不到 —— 内容直接不可达。
+    proximity 只在离吸附点足够近时才吸附，短屏依然是一屏一停的手感，
+    长屏可以自由滚到底。这是个明显的取舍，宁可少一点"咔哒"感。
+  */
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- 单屏 ---- */
+.scene {
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--pad-scene-block) var(--pad-scene-inline);
+}
+
+/* 内容高于视口时，改成顶部对齐 —— 居中会让上下两头都被裁掉，
+   而且滚到底也看不全 */
+.scene.tall {
+  align-items: flex-start;
+}
+
+.scene-inner {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: var(--gap-scene);
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 居中版（首屏、联系屏） */
+.scene.center .scene-inner {
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 920px;
+}
+
+/* 单列宽版（能力屏、轮播屏） */
+.scene-inner.wide {
+  grid-template-columns: 1fr;
+  max-width: 1300px;
+  align-content: center;
+  gap: 2.4rem;
+}
+
+/* ---- 排版元件 ---- */
+
+/* 编号：—— 04 这种，前缀横线来自 ::before */
+.scene-num {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  transition: color var(--theme-transition);
+}
+
+.scene-num::before {
+  content: '—— ';
+  color: var(--ink-faint);
+}
+
+/* 衬线大标题 */
+.scene-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: var(--fs-scene-title);
+  line-height: 1.05;
+  color: #fff;
+  margin: 1.1rem 0 0.9rem;
+}
+
+.scene-title-sm {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: var(--fs-scene-title-sm);
+  line-height: 1.1;
+  color: #fff;
+  margin: 1rem 0 0;
+}
+
+/* 等宽小标签：分类 / 技术方向 */
+.scene-tag {
+  font-family: var(--mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 1.4rem;
+  transition: color var(--theme-transition);
+}
+
+.scene-sub-sm {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  margin-top: 0.7rem;
+}
+
+/* 正文描述 */
+.scene-desc {
+  max-width: 470px;
+  color: var(--ink-dim);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin-bottom: 1.8rem;
+}
+
+.scene.center .scene-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 技术栈一行 */
+.scene-stack {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  margin-bottom: 2.4rem;
+}
+
+.scene-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.scene.center .scene-btns {
+  justify-content: center;
+}
+
+/* 主视觉槽位 */
+.scene-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================================
+   入场动效 —— 元素从下方 40px 处淡入
+   由 v-reveal 指令在进入视口时加上 .in
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s var(--ease),
+    transform 1s var(--ease);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* 阶梯延迟：同一屏里给元素加 d1~d6，就会逐行浮现而不是整块跳出 */
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }
+.d5 { transition-delay: 0.5s; }
+.d6 { transition-delay: 0.6s; }
+
+/* 内容还没加载完时的占位 */
+.skeleton {
+  border-radius: var(--r-card);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* ============================================================================
+   响应式
+   ========================================================================== */
+
+/* 中等屏幕：两列改单列，视觉图提到文字上方 */
+@media (max-width: 900px) {
+  .scene-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .scene-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .scene-visual {
+    order: -1;
+  }
+
+  .scene-btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --pad-scene-inline: 1.5rem;
+  }
+}
+
+/* 矮屏（笔记本接投影等）：压缩纵向间距，别让内容溢出 */
+@media (max-height: 760px) and (min-width: 761px) {
+  :root {
+    --pad-scene-block: 7vh;
+  }
+
+  .scene-title-sm {
+    font-size: clamp(2.2rem, 4vw, 3.25rem);
+    margin-top: 0.55rem;
+  }
+}

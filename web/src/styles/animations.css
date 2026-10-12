@@ -1,0 +1,72 @@
+/* ============================================================================
+   关键帧动画
+   注意：所有无限循环的动画在 prefers-reduced-motion 下都会被关掉（见文件末尾）
+   ========================================================================== */
+
+/* 首屏底部滚轮提示的那根线，呼吸式伸缩 */
+@keyframes cue {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* 证书大图弹入 */
+@keyframes certin {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 演示框左上角那道光扫过 —— 只在 hover 时跑一次 */
+@keyframes sweep {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+/* 极光球的缓慢呼吸，避免画面完全静止 */
+@keyframes floatGlow {
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+  50% {
+    opacity: 0.56;
+  }
+}
+
+/* 骨架屏微光（内容还没加载时用） */
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* ---- 无障碍：用户系统里开了"减少动态效果"就全关 ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

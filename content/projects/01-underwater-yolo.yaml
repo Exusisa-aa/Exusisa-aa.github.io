@@ -1,0 +1,64 @@
+# 水下养殖鱼数字化智能检测平台
+#
+# ⚠️ 带【待填】的字段需要你自己写。我按你的要求留空，没有编造任何项目细节或指标数字。
+#    metrics 留空数组 —— 有真实数据（mAP、准确率、推理耗时等）再往里加。
+
+id: underwater-yolo
+order: 1
+title: 水下养殖数字化智能检测平台
+subtitle: YOLO 视觉 · 检测与计数
+
+period: "【待填】例如 2025.03 – 2025.06"
+role: "【待填】你在团队里负责什么"
+team: "【待填】团队规模，或个人项目"
+status: competition          # competition | internship | course | personal | production
+
+category: [vision, ai-agent]
+tags: [Python, Ultralytics, YOLO, OpenCV, ONNX]
+
+summary: "基于水下机器鱼传感器和其拍摄图像的数字化检测平台，不仅记录数据，而且可以识别鱼病和网衣破损"
+
+description: |
+  【待填】写 2–4 句。建议覆盖：
+  - 为什么要做（养殖场景下的什么痛点）
+  - 你具体做了什么（数据、模型、训练、部署）
+  - 结果如何（但不要写没有依据的数字）
+
+highlights:
+  - "【待填】"
+  - "【待填】"
+  - "【待填】"
+
+# 有真实数据再填，例如：
+#   - { label: mAP@0.5, value: "0.9x" }
+#   - { label: 推理耗时, value: "xx ms / 帧" }
+metrics: []
+
+stack:
+  language: [Python]
+  framework: [Ultralytics YOLO, OpenCV, ONNX Runtime]
+  infra: [Docker, Ubuntu]
+
+# 「更多作品」轮播的封面。
+cover: /media/projects/underwater-yolo/cover.webp
+
+# 视频、算法架构图、检测结果、逐帧切图等共 25 个素材（10.4 MB）已移出仓库。
+#
+# 原因：这个项目是 featured: false，走「更多作品」轮播，而轮播只渲染 cover ——
+# 上面那些图一个都不会显示，但会跟着仓库一起被下载。
+# 现已移到 简历/未使用素材/ 下（结构保留），需要把这一项升回独立分镜时再拿回来。
+#
+# 拿回来之后，在这里补上 videos / gallery / frames 三段（格式见
+# 06-microservice-mall.yaml 的 gallery、02-mycat-cluster.yaml 的 videos 写法），
+# 并把 featured 改成 true、到 site.yaml 里加一屏。
+
+# 不放跳转按钮：这一屏整体标注了「企业级项目，机密，仅开发者可见」，
+# 单独给某一个项目挂 GitHub 按钮会自相矛盾。
+# 需要的话在下面加回 links（格式见 06-microservice-mall.yaml）。
+links: []
+
+theme: { c1: "#4fe0c8", c2: "#7ce0a8", accent: "#54e0b8" }
+
+# 原来的独立分镜位置让给了微服务商城项目，这一项改为进「更多作品」轮播。
+# 想彻底不展示的话，把整个文件删掉即可。
+featured: false

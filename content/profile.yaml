@@ -1,0 +1,79 @@
+# 个人基本信息与联系方式
+# 联系方式里的 primary: true 会在首屏高亮展示
+
+name: 陈明辉
+nameEn: CHEN MINGHUI
+age: 22
+
+# 求职意向（首屏大标题下方）
+headline: Java 全栈开发工程师 · Agent 智能体开发
+
+# 首屏那行大字（衬线字体）。分两段写：
+#   heroTitle       第一行，白色
+#   heroTitleAccent 第二行，渲染成渐变彩色
+# 现在这句取自你简历自我评价里的话，想换随时改。
+heroTitle: 让 Agent 工作流
+heroTitleAccent: 被我指挥。
+
+tagline: 让 Agent 工作流被我指挥，而不是牵着鼻子走。
+
+location: 广东 · 深圳
+
+# 求职状态：open(求职中) | busy(暂不看机会) | closed(不开放)
+status: open
+# 首屏状态行显示的内容。这里只写"阶段/身份"，
+# 「求职中 / 暂不看机会 / 不开放」由 status 字段自动追加，别在这里重复写。
+# TODO: 确认毕业届别（按 2024.09 入学 + 三年制推算应为 2027 届）
+statusText: 大三在读
+
+contacts:
+  - type: phone
+    label: 电话
+    value: "13602333144"
+    href: "tel:13602333144"
+    primary: true
+  - type: email
+    label: QQ 邮箱
+    value: "3638403983@qq.com"
+    href: "mailto:3638403983@qq.com"
+    # compose = 联系屏按钮的跳转地址。
+    #
+    # QQ 这边**没有可靠的「带收件人预填」链接** —— 官方「邮我」组件用的是加密串、
+    # 且经常失效；社区流传的 qm_show_writemail?to= 实测跳不过去。
+    # 所以只跳到 QQ 邮箱主页，收件人靠上面那行地址手动复制。
+    compose: "https://mail.qq.com/"
+    primary: true
+
+  - type: email
+    label: Gmail
+    value: "Aa3638403983@gmail.com"
+    href: "mailto:Aa3638403983@gmail.com"
+    # Gmail 这个是官方公开且长期稳定的写法
+    compose: "https://mail.google.com/mail/?view=cm&fs=1&to=Aa3638403983@gmail.com"
+  - type: github
+    label: GitHub
+    value: "Exusisa-aa"
+    href: "https://github.com/Exusisa-aa"
+    primary: true
+
+education:
+  - school: 深圳职业技术大学
+    major: 软件技术
+    degree: 大专
+    grade: 大三在读
+    start: "2024.09"
+    end: "至今"
+
+# 数字徽章。cert 指向证书大图（放 web/public/certs/），
+# 填了就能点开看，不填就只是个数字。
+badges:
+  - { value: "1", label: 广东省职业技能大赛省一, cert: /certs/gd-skills-2026.png }
+  - { value: "1", label: 软件著作权, cert: /certs/software-copyright-2026.png }
+  - { value: "1", label: 校级网页设计一等奖 }
+
+# 简历 PDF 下载路径
+# 前端静态模式下会从 web/public 下取这个文件。
+# 注意：文件名请用 ASCII 字符，中文文件名在部分浏览器下载会乱码。
+resumePdf: /files/ChenMinghui-Resume.pdf
+
+updatedAt: "2026-10-12"

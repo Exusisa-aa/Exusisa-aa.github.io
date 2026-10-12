@@ -1,0 +1,35 @@
+# 中惠云启科技集团 · 数据可视化系统
+
+id: zhonghui-datav
+order: 4
+title: 数据可视化系统
+subtitle: 中惠云启科技集团
+period: "【待填】"
+role: "【待填】"
+status: internship
+
+category: [frontend, java-backend]
+tags: [Vue3, ECharts, SpringBoot, MySQL, data-v]
+
+summary: "中惠云启科技集团的数据可视化系统，用于大屏展示"
+
+description: |
+  【待填】建议写：可视化的指标有哪些、数据怎么聚合的、
+  大屏适配和实时刷新怎么做的。
+
+highlights:
+  - "【待填】"
+
+metrics: []
+
+stack:
+  language: [Java, JavaScript]
+  framework: [Vue3, ECharts, SpringBoot]
+  infra: [MySQL]
+
+cover: /media/projects/zhonghui-datav/cover.webp
+gallery: []
+
+links: []
+theme: null
+featured: false

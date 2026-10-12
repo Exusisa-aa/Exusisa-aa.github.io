@@ -1,0 +1,18 @@
+# FastAPI backend dependencies
+# Install: pip install -r requirements.txt
+# NOTE: keep this file ASCII-only -- pip reads it with the system locale
+#       encoding on Windows (GBK), so non-ASCII comments break the install.
+
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+pydantic-settings>=2.4
+
+# Content loading (YAML -> Pydantic)
+PyYAML>=6.0
+
+# Database for contact form + visit stats
+SQLAlchemy>=2.0
+
+# Rate limiting for the contact form
+slowapi>=0.1.9

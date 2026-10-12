@@ -1,0 +1,75 @@
+# 站点元信息 —— 分镜顺序、每屏主题色、交互参数
+# 改这里就能调整页面结构，不需要动前端代码。
+#
+# section.type 取值：hero | about | skills | project | carousel | honors | selfeval | contact
+# section.theme  决定该屏的极光光晕配色（c1/c2 两个光球 + accent 强调色）
+#                注意：这里写什么颜色，前端就渲染什么颜色，不要用未定义的值。
+
+site:
+  title: 陈明辉 — Java 全栈开发 / Agent 智能体
+  description: 陈明辉的个人作品集 —— Java 全栈开发工程师 / Agent 智能体开发
+  lang: zh-CN
+  # TODO: 换成你自己的域名或 GitHub Pages 地址
+  url: https://example.github.io/portfolio/
+
+stage:
+  sections:
+    - id: hero
+      nav: 首屏
+      type: hero
+      theme: { c1: "#7c8cff", c2: "#4fe0c8", accent: "#8b9dff" }
+
+    - id: about
+      nav: 关于
+      type: about
+      theme: { c1: "#c8b89d", c2: "#7c8cff", accent: "#c8bfa8" }
+
+    - id: skills
+      nav: 能力
+      type: skills
+      theme: { c1: "#9d7cff", c2: "#7c8cff", accent: "#a58cff" }
+
+    - id: p-microservice-mall
+      nav: 微服务商城
+      type: project
+      projectId: microservice-mall
+      theme: { c1: "#3fd0a8", c2: "#5fa8e0", accent: "#45d0b0" }
+
+    - id: p-mycat-cluster
+      nav: 数据库集群
+      type: project
+      projectId: mycat-cluster
+      theme: { c1: "#4fc3e0", c2: "#7c8cff", accent: "#5fc8e8" }
+
+    - id: works
+      nav: 更多作品
+      type: carousel
+      theme: { c1: "#5fc8e8", c2: "#8b9dff", accent: "#6fc0e8" }
+
+    - id: honors
+      nav: 荣誉
+      type: honors
+      theme: { c1: "#ffb37c", c2: "#ffd07c", accent: "#ffab7c" }
+
+    - id: selfeval
+      nav: 自述
+      type: selfeval
+      theme: { c1: "#a88cff", c2: "#4fe0c8", accent: "#b09cff" }
+
+    - id: contact
+      nav: 联系
+      type: contact
+      theme: { c1: "#7c8cff", c2: "#4fe0c8", accent: "#8b9dff" }
+
+  # 固定舞台轮播参数（与参考站一致）
+  carousel:
+    autoplayMs: 5600      # 自动切换间隔
+    lockMs: 670           # 切换冷却，防连击
+    kenBurnsMs: 7000      # 激活幻灯片的缓慢推镜时长
+    swipePx: 48           # 指针滑动多少像素算翻页
+    offsetPx: 64          # 非激活幻灯片的横向偏移
+    scale: 0.985          # 非激活幻灯片的缩放
+
+  video:
+    aspect: "16 / 10"     # 演示视频框比例
+    seekOnHover: true     # 进度条悬停才显示

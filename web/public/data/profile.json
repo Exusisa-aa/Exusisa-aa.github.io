@@ -1,0 +1,76 @@
+{
+  "name": "陈明辉",
+  "nameEn": "CHEN MINGHUI",
+  "age": 22,
+  "headline": "Java 全栈开发工程师 · Agent 智能体开发",
+  "heroTitle": "让 Agent 工作流",
+  "heroTitleAccent": "被我指挥。",
+  "tagline": "让 Agent 工作流被我指挥，而不是牵着鼻子走。",
+  "location": "广东 · 深圳",
+  "status": "open",
+  "statusText": "大三在读",
+  "contacts": [
+    {
+      "type": "phone",
+      "label": "电话",
+      "value": "13602333144",
+      "href": "tel:13602333144",
+      "primary": true,
+      "compose": ""
+    },
+    {
+      "type": "email",
+      "label": "QQ 邮箱",
+      "value": "3638403983@qq.com",
+      "href": "mailto:3638403983@qq.com",
+      "primary": true,
+      "compose": "https://mail.qq.com/"
+    },
+    {
+      "type": "email",
+      "label": "Gmail",
+      "value": "Aa3638403983@gmail.com",
+      "href": "mailto:Aa3638403983@gmail.com",
+      "primary": false,
+      "compose": "https://mail.google.com/mail/?view=cm&fs=1&to=Aa3638403983@gmail.com"
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "value": "Exusisa-aa",
+      "href": "https://github.com/Exusisa-aa",
+      "primary": true,
+      "compose": ""
+    }
+  ],
+  "education": [
+    {
+      "school": "深圳职业技术大学",
+      "major": "软件技术",
+      "degree": "大专",
+      "grade": "大三在读",
+      "start": "2024.09",
+      "end": "至今",
+      "logo": ""
+    }
+  ],
+  "badges": [
+    {
+      "value": "1",
+      "label": "广东省职业技能大赛省一",
+      "cert": "/certs/gd-skills-2026.png"
+    },
+    {
+      "value": "1",
+      "label": "软件著作权",
+      "cert": "/certs/software-copyright-2026.png"
+    },
+    {
+      "value": "1",
+      "label": "校级网页设计一等奖",
+      "cert": null
+    }
+  ],
+  "resumePdf": "/files/ChenMinghui-Resume.pdf",
+  "updatedAt": "2026-10-12"
+}

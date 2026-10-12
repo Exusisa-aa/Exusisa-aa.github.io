@@ -1,0 +1,37 @@
+# 中惠云启科技集团 · 后台管理系统
+# cover 还是 null —— 有截图后放进 web/public/media/projects/zhonghui-admin/ 再改这里
+
+id: zhonghui-admin
+order: 3
+title: 后台管理系统
+subtitle: 中惠云启科技集团
+period: "【待填】"
+role: "【待填】"
+status: internship
+
+category: [java-backend, frontend]
+tags: [SpringBoot, MyBatis-Plus, Vue3, ElementPlus, MySQL, Redis, JWT, Nginx]
+
+summary: "中惠云启科技集团的后台管理系统，涵盖120+的表数和多个模块"
+
+description: |
+  【待填】建议写：系统的业务模块有哪些、你负责哪些模块、
+  权限/认证怎么做的、有没有做性能上的优化。
+
+highlights:
+  - "【待填】"
+
+metrics: []
+
+stack:
+  language: [Java, SQL]
+  framework: [SpringBoot, MyBatis-Plus, Vue3, ElementPlus]
+  middleware: [Redis]
+  infra: [MySQL, Nginx]
+
+cover: /media/projects/zhonghui-admin/cover.webp
+gallery: []
+
+links: []
+theme: null
+featured: false

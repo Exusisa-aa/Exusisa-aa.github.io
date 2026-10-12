@@ -1,0 +1,74 @@
+/* ============================================================================
+   设计变量 —— 全站视觉的地基
+   ----------------------------------------------------------------------------
+   参考站那套"高级感"基本都来自这里的三件事：
+     1. 暗底 + 两个极光光球（--c1 / --c2），随分镜切换、1.4s 缓慢过渡
+     2. 三层字体分工：衬线标题 / 细体正文 / 等宽标签
+     3. 全站统一缓动 --ease，所有动效收尾都极缓
+   改这里就能换掉整站风格，不需要动组件。
+   ========================================================================== */
+
+:root {
+  /* ---- 底色与文字 ---- */
+  --bg: #07070d;
+  --ink: #f1f1f6;
+  --ink-dim: #9b9ba8;
+  --ink-faint: #6a6a78;
+  --line: rgba(255, 255, 255, 0.08);
+
+  /* ---- 主题色：由 JS 按当前分镜写进来（见 stores/stage.ts）---- */
+  --c1: #7c8cff;      /* 光球 1 */
+  --c2: #4fe0c8;      /* 光球 2 */
+  --accent: #8b9dff;  /* 强调色：编号、按钮、指示点 */
+  --theme-transition: 1.4s ease;  /* 换屏时颜色流转的时长 */
+
+  /* ---- 字体 ---- */
+  --serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* ---- 排版尺度（全部流体，无需断点即可平滑缩放）---- */
+  --fs-hero: clamp(3.4rem, 8.4vw, 7.4rem);
+  --fs-scene-title: clamp(2.7rem, 5.2vw, 4.6rem);
+  --fs-scene-title-sm: clamp(2.4rem, 4.6vw, 4rem);
+  --fs-project-title: clamp(2.45rem, 4.4vw, 4.5rem);
+  --fs-body: 1.02rem;
+  --fs-body-sm: 0.86rem;
+  --fs-mono: 0.8rem;
+  --fs-mono-sm: 0.7rem;
+  --lh-body: 1.85;
+
+  /* ---- 间距 ---- */
+  --gap-scene: 3.4vw;
+  --pad-scene-inline: 6vw;
+  --pad-scene-block: 10vh;
+  --gap-grid: 1.1rem;
+
+  /* ---- 圆角 ---- */
+  --r-card: 18px;
+  --r-frame: 22px;
+  --r-carousel: 28px;
+  --r-pill: 99px;
+
+  /* ---- 玻璃拟态 ---- */
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  --glass-blur: blur(16px);
+  --glass-border: 1px solid var(--line);
+
+  /* ---- 阴影 ---- */
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-frame: 0 40px 90px rgba(0, 0, 0, 0.55);
+  /* 这行内阴影是"玻璃边缘高光"的来源 —— 少了它整个框就塌了 */
+  --highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  /* ---- 缓动 ---- */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);       /* 主缓动，收尾极缓 */
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);  /* Ken Burns 用 */
+
+  /* ---- 层级 ---- */
+  --z-aurora: 0;
+  --z-noise: 1;
+  --z-content: 2;
+  --z-topbar: 60;
+  --z-lightbox: 100;
+}

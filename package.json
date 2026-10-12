@@ -1,0 +1,21 @@
+{
+  "name": "chenminghui-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "陈明辉个人作品集 —— Vue 3 前端 + FastAPI 后端 + GitHub Pages 静态部署",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:web": "npm --prefix web run dev",
+    "dev:api": "cd server && python -m uvicorn app.main:app --reload --port 8000",
+    "export": "cd server && python -m app.export",
+    "build": "npm run export && npm --prefix web run build",
+    "build:pages": "npm run export && npm --prefix web run build:pages",
+    "preview": "npm --prefix web run preview",
+    "assets": "python scripts/prepare-assets.py",
+    "install:all": "npm install && npm --prefix web install && python -m pip install -r server/requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

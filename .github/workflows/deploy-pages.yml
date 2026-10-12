@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+# 推送到 main 就自动：导出内容快照 → 构建前端 → 发布到 Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同时只跑一个部署，新的推送取消排队中的旧任务
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # ---------- 后端：只用来跑内容导出 ----------
+      # 这个 job 不需要真的把 FastAPI 跑起来，只是复用它的加载层
+      # 把 content/*.yaml 渲染成静态 JSON 快照。
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: server/requirements.txt
+
+      - name: 安装后端依赖
+        run: pip install -r server/requirements.txt
+
+      - name: 导出静态内容快照
+        working-directory: server
+        run: python -m app.export --out ../web/public/data
+
+      # ---------- 前端 ----------
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: 安装前端依赖
+        working-directory: web
+        run: npm ci
+
+      - uses: actions/configure-pages@v5
+        id: pages
+
+      - name: 构建
+        working-directory: web
+        # PAGES_REPO 只传仓库名（不带前后斜杠）——
+        # 前端会自己拼成 /<repo>/ 作为 base。仓库改名后这里自动跟上。
+        env:
+          PAGES_REPO: ${{ github.event.repository.name }}
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

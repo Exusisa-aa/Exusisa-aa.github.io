@@ -1,0 +1,125 @@
+{
+  "id": "microservice-mall",
+  "order": 6,
+  "title": "微服务商城平台",
+  "subtitle": "SpringCloud 微服务 · Docker 编排部署",
+  "period": "【待填】",
+  "role": "【待填】你在其中负责什么",
+  "team": "",
+  "status": "personal",
+  "category": [
+    "microservice",
+    "devops",
+    "java-backend"
+  ],
+  "tags": [
+    "Docker",
+    "Nacos",
+    "Sentinel",
+    "Seata",
+    "RabbitMQ",
+    "Elasticsearch",
+    "Redis",
+    "MySQL",
+    "Nginx",
+    "网关",
+    "服务模块架构"
+  ],
+  "summary": "用 Docker 编排整套 SpringCloud 微服务商城：Nacos 注册与配置中心、Sentinel 流控熔断、Seata 分布式事务、RabbitMQ 消息与延迟队列、Redis 分片集群、Elasticsearch 商品检索。",
+  "description": "【待填】建议补：\n- 商城有哪些业务模块（截图里能看到购物车、商品、用户服务）\n- 容器编排怎么组织的（compose 分了几个网络/数据卷、启动顺序）\n- 遇到的具体问题（比如某个组件先起后起导致注册失败之类）\n",
+  "highlights": [
+    "Redis 分片集群 9 节点 3 主 6 从，主从复制状态 online",
+    "Nacos 作为配置中心集中管理 10 条共享配置（数据源 / Redis / 日志 / 网关路由等）",
+    "Sentinel 接入商品服务的簇点链路，配置流控、熔断、热点规则",
+    "RabbitMQ 声明延迟队列与死信交换机，承载支付、交易等异步流程"
+  ],
+  "metrics": [],
+  "stack": {
+    "language": [
+      "Java",
+      "Shell",
+      "YAML"
+    ],
+    "framework": [
+      "SpringCloud",
+      "Docker Compose"
+    ],
+    "middleware": [
+      "Nacos",
+      "Sentinel",
+      "Seata",
+      "RabbitMQ",
+      "Elasticsearch",
+      "Kibana",
+      "Redis",
+      "MySQL"
+    ],
+    "infra": [
+      "Docker",
+      "Nginx"
+    ]
+  },
+  "cover": "/media/projects/microservice-mall/01-docker-ps.webp",
+  "images": [],
+  "gallery": [
+    {
+      "src": "/media/projects/microservice-mall/01-docker-ps.webp",
+      "alt": "docker ps 查看全部容器运行状态",
+      "caption": "全部容器运行中 · Redis 分片 / Nacos / Seata / Sentinel / RabbitMQ / ES / Kibana / MySQL",
+      "kind": "screenshot"
+    },
+    {
+      "src": "/media/projects/microservice-mall/02-redis-cluster.webp",
+      "alt": "Redis 集群节点列表与主从复制状态",
+      "caption": "Redis 分片集群 · cluster nodes 与主从复制状态",
+      "kind": "diagram"
+    },
+    {
+      "src": "/media/projects/microservice-mall/03-nacos-config.webp",
+      "alt": "Nacos 配置管理页面",
+      "caption": "Nacos 配置中心 · 集中管理共享配置与网关路由",
+      "kind": "screenshot"
+    },
+    {
+      "src": "/media/projects/microservice-mall/04-sentinel.webp",
+      "alt": "Sentinel 控制台的簇点链路页面",
+      "caption": "Sentinel 控制台 · 商品服务簇点链路",
+      "kind": "screenshot"
+    },
+    {
+      "src": "/media/projects/microservice-mall/05-seata.webp",
+      "alt": "Seata 事务信息页面",
+      "caption": "Seata 控制台 · 分布式事务",
+      "kind": "screenshot"
+    },
+    {
+      "src": "/media/projects/microservice-mall/06-rabbitmq.webp",
+      "alt": "RabbitMQ 交换机列表",
+      "caption": "RabbitMQ · 延迟队列与死信交换机",
+      "kind": "screenshot"
+    },
+    {
+      "src": "/media/projects/microservice-mall/07-elasticsearch.webp",
+      "alt": "Elasticsearch Dev Tools 控制台",
+      "caption": "Elasticsearch · IK 中文分词与索引映射",
+      "kind": "screenshot"
+    }
+  ],
+  "frames": [],
+  "videos": [],
+  "links": [
+    {
+      "type": "github",
+      "label": "GitHub",
+      "url": "https://github.com/Exusisa-aa/JavaLearnCode/tree/master/hm-springcloud",
+      "note": "仅前后端代码，虚拟机镜像由作者保管"
+    }
+  ],
+  "galleryAspect": null,
+  "theme": {
+    "c1": "#3fd0a8",
+    "c2": "#5fa8e0",
+    "accent": "#45d0b0"
+  },
+  "featured": true
+}

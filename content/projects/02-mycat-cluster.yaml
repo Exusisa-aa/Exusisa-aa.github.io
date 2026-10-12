@@ -1,0 +1,85 @@
+# Mycat 数据库集群 —— 水平分表 + 二主二从读写分离
+#
+# 内容依据：
+#   * 手写架构图（web/public/media/projects/mycat-cluster/01-architecture.webp）
+#   * Mycat schema.xml 配置（…/02-schema-xml.webp）
+# 拓扑与参数都来自这两份材料，没有编造。
+# 【待填】的是我无法从材料里推断的部分（周期、分工等）。
+
+id: mycat-cluster
+order: 2
+title: 基于 Mycat 的数据库集群
+subtitle: 水平分表 · 二主二从读写分离 · 主备自动切换
+
+period: "【待填】"
+role: "【待填】独立搭建 / 团队协作"
+status: personal
+
+category: [database, devops]
+tags: [MySQL, Mycat, Mycat-eye, 水平分表, 主从复制, 读写分离, 主备切换, Linux]
+
+summary: 用 Mycat 按 id 取模把写入水平拆到两个主库，每个分片再配一台备用主库和各带一个从库，合计 8 个 MySQL 节点；主库故障时备用主库接管写入。
+
+description: |
+  整套集群分两层：Mycat 在前面做分片路由和读写分离，后面是两组 MySQL 主从。
+
+  写入按 id % 2 水平分表落到 Master1 / Master2。每个分片是一主一备的结构：
+  Master1 配备用主库 Master11，两台再各带一个从库（Slave1 / Slave11）。
+  两个分片合计 8 个 MySQL 节点，加 Mycat 一共 9 台机器。
+
+  Master1 与 Master2 只接受写入，其余 6 个节点（两台备用主库 + 四个从库）
+  全部只承接读 —— 写集中在两台、读摊到六台。
+  主库挂掉时，Master11 接替 Master1、Master22 接替 Master2 执行写操作。
+
+  Mycat 侧通过 schema.xml 声明四组 dataHost，balance="1" 让读请求在
+  各读库之间随机分发，switchType="1" 打开主库故障自动切换。
+
+highlights:
+  # 以下每一条都能在手写架构图或 schema.xml 里找到出处
+  - 水平分表：写入按 id % 2 路由到 Master1 与 Master2，避免单主库数据量过大拖慢性能
+  - 每个分片「二主二从」：Master1 配 Master11、Master2 配 Master22，两台再各带一个从库
+  - 共 8 个 MySQL 节点 + 1 个 Mycat，分两个分片各 4 节点
+  - 读写分离：只有 Master1 / Master2 接受写入，其余 6 个节点（备用主库 + 从库）全部只读
+  - 故障接管：Master1 挂掉由 Master11 接替写、Master2 挂掉由 Master22 接替写
+  - 配置为 balance="1" 读写分离模式，Mycat 在提供读的节点之间随机分发请求
+  - 用 Mycat-eye 监控 SQL 读写次数与响应时间分布
+
+metrics: []
+
+stack:
+  language: [SQL]
+  framework: [Mycat, Mycat-eye]
+  middleware: [MySQL]
+  infra: [Linux]
+
+cover: /media/projects/mycat-cluster/01-architecture.webp
+
+# 这一屏的主视觉 —— 架构图 + 配置，自动轮播。
+# 手写图是 4:3、配置截图是 1.73:1，都比桌面截图方，
+# 所以把轮播框从默认的 1.93 调成 1.5 —— 少留黑边、字更大。
+galleryAspect: 1.5
+gallery:
+  - src: /media/projects/mycat-cluster/01-architecture.webp
+    kind: architecture
+    alt: 手绘的 Mycat 数据库集群架构图
+    caption: 集群拓扑 · Mycat 分片路由 + 8 个 MySQL 节点（id % 2 分成两个分片，每片二主二从）
+
+  - src: /media/projects/mycat-cluster/02-schema-xml.webp
+    kind: diagram
+    alt: Mycat schema.xml 中 dataHost 的配置
+    caption: schema.xml · 2 个 dataHost 各声明 2 个 writeHost，balance=1 读写分离、switchType=1 自动切换
+
+  - src: /media/projects/mycat-cluster/03-mycateye.webp
+    kind: screenshot
+    alt: Mycat-eye 的 SQL 统计页面
+    caption: Mycat-eye · SQL 读写次数与响应时间分布
+
+# 这个项目不开放跳转：url 留空就不渲染按钮，只显示 note 那句说明
+links:
+  - type: other
+    label: ""
+    url: ""
+    note: 仅展示，虚拟机镜像由作者保管
+
+theme: { c1: "#4fc3e0", c2: "#7c8cff", accent: "#5fc8e8" }
+featured: true
