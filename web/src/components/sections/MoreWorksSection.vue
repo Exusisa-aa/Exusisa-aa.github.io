@@ -9,11 +9,13 @@ import { computed, ref } from 'vue'
 
 import type { Project, StageSection } from '@/api/types'
 import { useContentStore } from '@/stores/content'
+import { useStageStore } from '@/stores/stage'
 import StageCarousel from '@/components/ui/StageCarousel.vue'
 
 const props = defineProps<{ section: StageSection }>()
 
 const content = useContentStore()
+const stage = useStageStore()
 
 const projects = computed(() => content.carouselProjects)
 
@@ -44,7 +46,7 @@ const profileUrl = computed(
   <section :id="props.section.id" class="scene">
     <div class="scene-inner">
       <div class="scene-text">
-        <p v-reveal class="scene-num">05</p>
+        <p v-reveal class="scene-num">{{ stage.numberOf(props.section.id) }}</p>
         <h2 v-reveal="1" class="scene-title-sm">更多作品</h2>
         <p v-reveal="2" class="scene-sub-sm">企业级项目 · 界面为实际运行截图</p>
 

@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-10-12T15:32:17+00:00",
-  "contentHash": "3d76f72243e51e54",
+  "generatedAt": "2026-10-21T00:39:28+00:00",
+  "contentHash": "0c71798c96410cfe",
   "profile": {
     "name": "陈明辉",
     "nameEn": "CHEN MINGHUI",
@@ -409,39 +409,6 @@
   },
   "stage": {
     "sections": [
-      {
-        "id": "hero",
-        "nav": "首屏",
-        "type": "hero",
-        "projectId": null,
-        "theme": {
-          "c1": "#7c8cff",
-          "c2": "#4fe0c8",
-          "accent": "#8b9dff"
-        }
-      },
-      {
-        "id": "about",
-        "nav": "关于",
-        "type": "about",
-        "projectId": null,
-        "theme": {
-          "c1": "#c8b89d",
-          "c2": "#7c8cff",
-          "accent": "#c8bfa8"
-        }
-      },
-      {
-        "id": "skills",
-        "nav": "能力",
-        "type": "skills",
-        "projectId": null,
-        "theme": {
-          "c1": "#9d7cff",
-          "c2": "#7c8cff",
-          "accent": "#a58cff"
-        }
-      },
       {
         "id": "p-microservice-mall",
         "nav": "微服务商城",

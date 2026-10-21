@@ -38,16 +38,15 @@ OUT_DIR = Path(__file__).resolve().parent.parent / ".shots"
 DEBUG_PORT = 9222
 
 # 分镜顺序与 content/site.yaml 的 stage.sections 对应
+# 顺序要与 content/site.yaml 的 stage.sections 一致。
+# 首屏 / 关于我 / 核心能力 三屏已隐藏，所以现在从项目开始。
 SCENES = [
-    ("00-hero", "首屏"),
-    ("01-about", "关于我"),
-    ("02-skills", "核心能力"),
-    ("03-microservice-mall", "微服务商城"),
-    ("04-mycat", "Mycat 集群"),
-    ("05-works", "更多作品"),
-    ("06-honors", "荣誉资质"),
-    ("07-selfeval", "自我评价"),
-    ("08-contact", "联系"),
+    ("00-microservice-mall", "微服务商城"),
+    ("01-mycat", "Mycat 集群"),
+    ("02-works", "更多作品"),
+    ("03-honors", "荣誉资质"),
+    ("04-selfeval", "自我评价"),
+    ("05-contact", "联系"),
 ]
 
 CHROME_CANDIDATES = [

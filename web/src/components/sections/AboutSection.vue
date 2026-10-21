@@ -4,12 +4,14 @@ import { computed } from 'vue'
 
 import type { Badge, StageSection } from '@/api/types'
 import { useContentStore } from '@/stores/content'
+import { useStageStore } from '@/stores/stage'
 import { useUiStore } from '@/stores/ui'
 import { assetUrl } from '@/utils/asset'
 
 const props = defineProps<{ section: StageSection }>()
 
 const content = useContentStore()
+const stage = useStageStore()
 const ui = useUiStore()
 
 const profile = computed(() => content.profile)
@@ -33,7 +35,7 @@ const certBadges = computed(() => badges.value.filter((b) => b.cert))
   <section :id="props.section.id" class="scene">
     <div class="scene-inner">
       <div class="scene-text">
-        <p v-reveal class="scene-num">01</p>
+        <p v-reveal class="scene-num">{{ stage.numberOf(props.section.id) }}</p>
         <h2 v-reveal="1" class="scene-title-sm">关于我</h2>
 
         <p v-reveal="2" class="scene-desc about-desc">

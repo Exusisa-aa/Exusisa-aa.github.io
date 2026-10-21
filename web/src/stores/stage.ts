@@ -57,7 +57,19 @@ export const useStageStore = defineStore('stage', () => {
     if (index >= 0) goTo(index, behavior)
   }
 
+  /**
+   * 分镜编号，形如 "01"、"02"。
+   *
+   * 按在 site.yaml 里的位置算（从 01 起），**不要在组件里写死** ——
+   * 增删分镜（比如把首屏藏起来）时，写死的号码会立刻对不上。
+   */
+  function numberOf(id: string): string {
+    const i = sections.value.findIndex((s) => s.id === id)
+    return String(Math.max(i + 1, 1)).padStart(2, '0')
+  }
+
   return {
+    numberOf,
     sections,
     activeIndex,
     activeSection,

@@ -9,10 +9,12 @@ import { computed } from 'vue'
 
 import type { StageSection } from '@/api/types'
 import { useContentStore } from '@/stores/content'
+import { useStageStore } from '@/stores/stage'
 
 const props = defineProps<{ section: StageSection }>()
 
 const content = useContentStore()
+const stage = useStageStore()
 const groups = computed(() => content.skills)
 </script>
 
@@ -21,7 +23,7 @@ const groups = computed(() => content.skills)
   <section :id="props.section.id" class="scene tall">
     <div class="scene-inner wide">
       <div class="scene-head">
-        <p v-reveal class="scene-num">02</p>
+        <p v-reveal class="scene-num">{{ stage.numberOf(props.section.id) }}</p>
         <h2 v-reveal="1" class="scene-title-sm">核心能力</h2>
         <p v-reveal="2" class="scene-sub-sm">按方向分组 · 每组都能在项目里找到对应</p>
       </div>

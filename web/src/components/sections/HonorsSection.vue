@@ -9,12 +9,14 @@ import { computed } from 'vue'
 
 import type { StageSection } from '@/api/types'
 import { useContentStore } from '@/stores/content'
+import { useStageStore } from '@/stores/stage'
 import { useUiStore } from '@/stores/ui'
 import { assetUrl } from '@/utils/asset'
 
 const props = defineProps<{ section: StageSection }>()
 
 const content = useContentStore()
+const stage = useStageStore()
 const ui = useUiStore()
 
 const honors = computed(() => content.honors)
@@ -65,7 +67,7 @@ function openHonorCert(honorId: string): void {
   <section :id="props.section.id" class="scene">
     <div class="scene-inner">
       <div class="scene-text">
-        <p v-reveal class="scene-num">06</p>
+        <p v-reveal class="scene-num">{{ stage.numberOf(props.section.id) }}</p>
         <h2 v-reveal="1" class="scene-title-sm">荣誉资质</h2>
         <p v-reveal="2" class="scene-desc honors-desc">
           比赛、软著与认证 —— 每一条都可以对应到简历里的原始材料。

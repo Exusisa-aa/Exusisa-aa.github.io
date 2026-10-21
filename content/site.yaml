@@ -13,22 +13,27 @@ site:
   url: https://example.github.io/portfolio/
 
 stage:
+  # ⚠️ 首屏(hero)、关于我(about)、核心能力(skills) 三屏已隐藏 ——
+  #    现在访客一进来就是项目，自我介绍放在后面的「自述」屏。
+  #
+  #    想恢复的话，把下面三段贴回 sections 最前面即可（组件都还在，
+  #    只是不再从配置里渲染）：
+  #
+  #    - id: hero
+  #      nav: 首屏
+  #      type: hero
+  #      theme: { c1: "#7c8cff", c2: "#4fe0c8", accent: "#8b9dff" }
+  #
+  #    - id: about
+  #      nav: 关于
+  #      type: about
+  #      theme: { c1: "#c8b89d", c2: "#7c8cff", accent: "#c8bfa8" }
+  #
+  #    - id: skills
+  #      nav: 能力
+  #      type: skills
+  #      theme: { c1: "#9d7cff", c2: "#7c8cff", accent: "#a58cff" }
   sections:
-    - id: hero
-      nav: 首屏
-      type: hero
-      theme: { c1: "#7c8cff", c2: "#4fe0c8", accent: "#8b9dff" }
-
-    - id: about
-      nav: 关于
-      type: about
-      theme: { c1: "#c8b89d", c2: "#7c8cff", accent: "#c8bfa8" }
-
-    - id: skills
-      nav: 能力
-      type: skills
-      theme: { c1: "#9d7cff", c2: "#7c8cff", accent: "#a58cff" }
-
     - id: p-microservice-mall
       nav: 微服务商城
       type: project

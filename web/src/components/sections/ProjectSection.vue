@@ -9,6 +9,7 @@ import { computed } from 'vue'
 
 import type { Project, StageSection } from '@/api/types'
 import { useContentStore } from '@/stores/content'
+import { useStageStore } from '@/stores/stage'
 import { assetUrl } from '@/utils/asset'
 import GalleryCarousel from '@/components/ui/GalleryCarousel.vue'
 import VideoStage from '@/components/ui/VideoStage.vue'
@@ -19,6 +20,7 @@ const props = defineProps<{
 }>()
 
 const content = useContentStore()
+const stage = useStageStore()
 
 const video = computed(() => props.project?.videos[0] ?? null)
 const gallery = computed(() => props.project?.gallery ?? [])
@@ -30,11 +32,8 @@ const staticImage = computed(
   () => props.project?.images[0] ?? props.project?.gallery[0] ?? null,
 )
 
-/** 分镜序号 —— 从 stage.sections 里数，保证和圆点导航一致 */
-const sceneNum = computed(() => {
-  const i = content.sections.findIndex((s) => s.id === props.section.id)
-  return String(Math.max(i, 0)).padStart(2, '0')
-})
+/** 分镜序号 —— 按在 site.yaml 里的位置算，别写死 */
+const sceneNum = computed(() => stage.numberOf(props.section.id))
 
 /**
  * 技术栈那行。
